@@ -1,0 +1,131 @@
+*,
+*:focus,
+*:focus-visible,
+button:focus,
+button:focus-visible,
+.btn:focus,
+.btn:focus-visible,
+a:focus,
+a:focus-visible,
+.btn,
+a {
+	outline: none !important;
+	outline: 0 !important;
+	outline-width: 0 !important;
+	-webkit-tap-highlight-color: transparent !important;
+	-webkit-direct-focus: none !important;
+	-webkit-focus-ring-color: transparent auto 0px;
+	outline-style: none !important;
+	outline: -webkit-focus-ring-color auto 0px;
+	outline: transparent auto 0px;
+}
+.btn {
+	outline: none !important;
+	outline: 0 !important;
+	outline-width: 0 !important;
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	-webkit-tap-highlight-color: transparent !important;
+	-webkit-direct-focus: none !important;
+	-webkit-focus-ring-color: transparent auto 0px;
+	outline-style: none !important;
+	outline: -webkit-focus-ring-color auto 0px;
+	outline: transparent auto 0px;
+}
+a {
+	outline: none !important;
+	outline: 0 !important;
+	outline-width: 0 !important;
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	-webkit-tap-highlight-color: transparent !important;
+	-webkit-direct-focus: none !important;
+	-webkit-focus-ring-color: transparent auto 0px;
+	outline-style: none !important;
+	outline: -webkit-focus-ring-color auto 0px;
+	outline: transparent auto 0px;
+}
+
+.red-button {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	padding: 20px 70px;
+	background-color: #be2a37;
+	color: #fff;
+	border-radius: 50px;
+	max-width: 241px;
+}
+
+.center-button {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	color: #be2a37;
+	border: 2px solid #be2a37;
+	border-radius: 50px;
+	padding: 20px;
+	max-width: 266px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 50px;
+	transition: all 0.3s ease-in-out;
+
+	&.red {
+		background-color: #be2a37;
+		color: #fff;
+		&:hover {
+			color: #be2a37;
+			background-color: #fff;
+			cursor: pointer;
+		}
+	}
+
+	&.center-button_desktop {
+		margin: 0;
+		width: 100%;
+
+		@media (max-width: 1200px) {
+			font-size: 16px;
+			padding: 15px;
+		}
+
+		@media (max-width: 992px) {
+			display: none;
+		}
+	}
+
+	&.center-button_mobile {
+		display: none;
+
+		@media (max-width: 992px) {
+			display: flex;
+		}
+	}
+
+	&:hover {
+		background-color: #be2a37;
+		color: #fff;
+		cursor: pointer;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+		padding: 15px;
+		max-width: 180px;
+		margin-top: 20px;
+	}
+
+	@media (max-width: 576px) {
+		font-size: 12px;
+		padding: 12px;
+		max-width: 140px;
+		margin-top: 20px;
+	}
+}

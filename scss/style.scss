@@ -1,0 +1,44 @@
+@import "resets/_normalize";
+@import "resets/_reset.local";
+@import "resets/_typography";
+
+.absoluteCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.inner {
+	max-width: 1210px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.hidden {
+	opacity: 0;
+}
+
+.visible {
+	opacity: 1;
+}
+
+.overflowed {
+	overflow: hidden;
+	touch-action: none;
+	-ms-touch-action: none;
+	-webkit-overflow-scrolling: touch;
+
+	@media (max-width: 1024px) {
+		padding-right: 0 !important;
+	}
+}
+
+@import "_header";
+@import "_sidebar";
+@import "_footer";
+@import "_ui";
+@import "_popups";
+@import "_form";
+@import "_adaptive";
+@import "_main";

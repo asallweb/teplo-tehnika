@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+	<title>Название проекта</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/favicon/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+	<!-- Конец favicon -->
+
+	<!-- Окрасить окно и статус бар мобильных браузеров -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#fff">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#fff">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+	<!-- Конец Окрасить окно и статус бар мобильных браузеров -->
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap&subset=cyrillic" rel="stylesheet"> -->
+
+
+	<link href="css/preloader.css" rel="stylesheet">
+	<script>
+		window.addEventListener('load', function(){			
+			document.querySelector('.pre-loader').style.display = 'none';
+			document.querySelector('body').classList.remove("overflowed");
+		});
+	</script>
+
+</head>
+
+<body class="overflowed">
+	<div class="pre-loader"> 
+		<div class="loader">
+		</div>
+	</div>
+	<header class="header animate__animated animate__fadeInDown">
+		<div w3-include-html="header.html"></div>
+	</header>	
+	<main class="main hasAnimation" data-animate="animate__zoomIn">
+		<div class="inner">
+			 
+			<aside>Sidebar text1123</aside>
+			
+			<div class="block">
+				<div class="block__item block__item--green"></div>
+				<div class="block__item"></div>
+
+			</div>
+			<button class="show__popup-btn" data-popup="firstPopup">Тип деятельности</button>
+			
+		</div>
+	</main>
+	<footer class="footer hasAnimation" data-animate="animate__fadeInUp">
+		<div w3-include-html="footer.html"></div>
+	</footer>
+	<div class="popup" id="firstPopup">
+		<div class="popup__inner">
+			<div class="popup__content animate__animated" data-animatedin="animate__fadeInDown" data-animatedout="animate__fadeOutDown">
+				<button class="popup__close close-popup">X</button>
+				<h1>Выберите тип предпринимательской деятельности:</h1>
+				<button class="show__popup-btn close-popup" data-popup="secondPopup">Физ.лицо</button>
+				<button class="show__popup-btn close-popup" data-popup="thirdPopup">Юр.лицо</button>
+			</div>
+		</div>
+	</div>
+	<div class="popup" id="secondPopup">
+		<div class="popup__inner">
+			<div class="popup__content animate__animated" data-animatedin="animate__fadeInLeft" data-animatedout="animate__fadeOutRight">
+				<button class="popup__close close-popup">X</button>
+				<h1>Физ.лицо</h1>
+				<div class="form">
+					<form action="">
+						<input type="text">
+						<input type="tel">
+						<input type="password">
+						<input type="submit">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup" id="thirdPopup">
+		<div class="popup__inner">
+			<div class="popup__content animate__animated" data-animatedin="animate__fadeInRight" data-animatedout="animate__fadeOutLeft">
+				<button class="popup__close close-popup">X</button>
+				<h1>Юр.лицо</h1>
+				<div class="form">
+					<form action="">
+						<input type="text">
+						<input type="tel">
+						<input type="password">
+						<input type="submit">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<link href="css/slick-theme.min.css" rel="stylesheet">
+<link href="css/slick.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/jquery.viewportchecker.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/main.js"></script>
+<script>
+	function includeHTML() {
+		var z, i, elmnt, file, xhttp;
+		/*loop through a collection of all HTML elements:*/
+		z = document.getElementsByTagName("*");
+		for (i = 0; i < z.length; i++) {
+			elmnt = z[i];
+			/*search for elements with a certain atrribute:*/
+			file = elmnt.getAttribute("w3-include-html");
+			if (file) {
+				/*make an HTTP request using the attribute value as the file name:*/
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4) {
+						if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+						if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+						/*remove the attribute, and call this function once more:*/
+						elmnt.removeAttribute("w3-include-html");
+						includeHTML();
+					}
+				}      
+				xhttp.open("GET", file, true);
+				xhttp.send();
+				/*exit the function:*/
+				return;
+			}
+		}
+	};
+	includeHTML();
+</script>
+</html>
